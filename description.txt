@@ -1,1 +1,94 @@
-This is for mumbai hacks 
+# **🤖 FinZen: The Agentic Financial Guardian**
+
+**FinZen** is not just a chatbot. It is an **Autonomous Financial Agent** that acts as a Guardian, Analyst, and Trader.
+
+Unlike standard AI wrappers that just "talk," FinZen has **"Hands"** (to trade), **"Eyes"** (to research the web), and a **"Logical Core"** (to perform deterministic math). It intercepts your financial decisions, validates them against your real-time financial health, and executes actions only when safe.
+
+---
+
+### **1. The Core Philosophy**
+* **Safety First:** An AI should never hallucinate math. FinZen uses a Python-based **Logic Engine** to calculate risks before the LLM generates a response.
+* **Hyper-Personalized:** It doesn't give generic advice. It reads your specific **Income, Savings, Debts, and Budgets** from the database to tailor every answer.
+* **Action-Oriented:** It doesn't just say "Buy Apple." It connects to the stock exchange and **buys it for you**.
+
+---
+
+### **2. The 5 Pillars of Intelligence**
+
+#### **🛡️ I. The Guardian (Risk Engine)**
+* **Function:** Prevents financial suicide.
+* **Logic:** Before any trade is approved, it runs a **Deterministic Health Check**:
+    * *Emergency Fund Check:* Do you have >3 months of expenses saved?
+    * *Savings Rate Check:* Are you saving >20% of income?
+* **Outcome:** If you ask *"Can I buy a Rolex?"*, the Guardian calculates that it would wipe out 40% of your savings and **BLOCKS** the decision, regardless of what the AI "thinks."
+
+#### **🧠 II. The Brain (Semantic Router)**
+* **Function:** Understanding Intent.
+* **Tech:** **Google Gemini 2.0 Flash**.
+* **Logic:** It doesn't use simple keywords. It classifies user intent into:
+    * **`TRADE_EXECUTION`:** "Invest $100 in Apple" (Triggers Agent).
+    * **`STOCK_RESEARCH`:** "Compare Zomato and Paytm" (Triggers Researcher).
+    * **`FINANCIAL_ADVISORY`:** "I lost my savings, help me" (Triggers Recovery Logic).
+    * **`GENERAL_CHAT`:** "Hi" (Triggers conversation).
+
+#### **🌐 III. The Researcher (The Eyes)**
+* **Function:** Real-time Market Intelligence.
+* **Tech:** **DuckDuckGo Search** + **Yahoo Finance API**.
+* **Capabilities:**
+    * **Stocks:** Fetches live Price, P/E Ratio, ROE, and News Sentiment.
+    * **Property:** Scrapes real estate listings (MagicBricks/99Acres) for specific cities/budgets.
+    * **Insurance:** Finds specific policies (HDFC/ICICI) based on the user's age and income.
+    * **Intelligent Parsing:** Uses Gemini to convert messy web search results into clean JSON data for analysis.
+
+#### **📉 IV. The Agent (The Hands)**
+* **Function:** Autonomous Execution.
+* **Tech:** **Alpaca Markets API**.
+* **Logic:**
+    1.  Receives an "APPROVED" verdict from the Brain.
+    2.  Decrypts the user's API Keys from the database.
+    3.  Places a **Market Buy Order** on the exchange.
+    4.  Logs the transaction in the database.
+
+#### **🧮 V. The Planner (Math Core)**
+* **Function:** Precision Calculations (Indian Context).
+* **Logic:** Pure Python functions (No AI hallucinations).
+    * **Tax:** Calculates Indian Income Tax (New Regime FY24-25) with Cess and Surcharge.
+    * **SIP:** Calculates Future Value of investments.
+    * **Loans:** Calculates exact EMI.
+
+---
+
+### **3. The Architecture Stack**
+
+#### **Backend (Python FastAPI)**
+* **API Layer:** `api.py` (FastAPI) handles HTTP requests from the frontend.
+* **Database:** **PostgreSQL** (via Neon) stores Users, Transactions, Budgets, and Assets.
+* **Vector Memory:** **ChromaDB** stores conversation history (RAG) so the AI remembers context.
+
+#### **Frontend (React)**
+* **Dashboard:** Displays Real-time **Net Worth**, **Budget Pie Charts** (Recharts), and **Stock Performance Graphs**.
+* **Chat Interface:** A floating AI overlay that renders Markdown responses and visual badges (✅ APPROVED / 🛑 BLOCKED).
+
+---
+
+### **4. The Data Flow (Example Scenario)**
+
+1.  **User says:** *"Compare Reliance and TCS."*
+    * **Router:** Detects `STOCK_RESEARCH`.
+    * **Researcher:** Fetches live data for `RELIANCE.NS` and `TCS.NS`.
+    * **Brain:** Compares P/E and ROE. Says: *"TCS is better fundamentally."*
+
+2.  **User says:** *"Okay, invest ₹5000 in TCS."*
+    * **Router:** Detects `TRADE_EXECUTION`.
+    * **Guardian:** Checks Database. *"User has ₹1.2L savings. ₹5k is safe. Risk Score: 20/100."*
+    * **Verdict:** **APPROVE**.
+    * **Agent:** Connects to Alpaca/Exchange. **Executes Buy Order.**
+    * **Result:** Frontend shows: `🚀 SUCCESS: Bought TCS.`
+
+---
+
+### **5. Key Differentiators (Why this wins)**
+1.  **Hybrid Architecture:** It separates **Math** (Code) from **Language** (AI). It never hallucinates numbers.
+2.  **Full-Stack Context:** It knows your **Bank Balance**, **Portfolio**, **Debts**, and **Goals**. ChatGPT does not know this.
+3.  **Indian Localization:** It understands **Lakhs/Crores**, **Indian Tax Laws**, and **NSE/BSE Tickers**.
+4.  **Forensic Verification:** It can audit Insurance Policies (CSR/ASR ratios) and Property (RERA IDs) to prevent scams.
